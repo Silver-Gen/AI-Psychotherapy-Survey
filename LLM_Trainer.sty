@@ -1,0 +1,127 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\begin{document}
+
+\title{Algorithm for Fine-Tuning a Language Model with Custom Configuration}
+
+\author{\IEEEauthorblockN{Author Name}
+\IEEEauthorblockA{Affiliation\\
+Email: author@example.com}
+}
+
+\maketitle
+
+\begin{abstract}
+This paper presents an algorithm for fine-tuning a language model with a custom configuration. The approach leverages advanced techniques such as quantization and gradient checkpointing to optimize memory usage and training efficiency. We detail the step-by-step implementation and the configurations used in this process.
+\end{abstract}
+
+\section{Introduction}
+The fine-tuning of large language models often requires significant computational resources. This paper demonstrates a method to reduce these requirements by using specific configurations and optimizations.
+
+\section{Algorithm Description}
+The algorithm consists of several stages, including tokenizer setup, model loading with quantization, training preparation, and the actual training process. Below, we detail each step.
+
+\section{Implementation}
+
+\subsection{Tokenizer Setup}
+\begin{lstlisting}[language=Python]
+from transformers import AutoTokenizer
+
+base_model = "microsoft/phi-2"
+tokenizer = AutoTokenizer.from_pretrained(base_model, use_fast=True)
+tokenizer.pad_token = tokenizer.eos_token
+tokenizer.padding_side = "right"
+\end{lstlisting}
+
+\subsection{Model Loading with Quantization}
+\begin{lstlisting}[language=Python]
+from transformers import AutoModelForCausalLM
+from transformers import BitsAndBytesConfig
+import torch
+
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.float16,
+    bnb_4bit_use_double_quant=False,
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    base_model,
+    quantization_config=bnb_config,
+    trust_remote_code=True,
+    flash_attn=True,
+    flash_rotary=True,
+    fused_dense=True,
+    low_cpu_mem_usage=True,
+    device_map={"": 0},
+    revision="refs/pr/23",
+)
+
+model.config.use_cache = False
+model.config.pretraining_tp = 1
+\end{lstlisting}
+
+\subsection{Training Preparation}
+\begin{lstlisting}[language=Python]
+from peft import prepare_model_for_kbit_training
+
+model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+\end{lstlisting}
+
+\subsection{Training Configuration}
+\begin{lstlisting}[language=Python]
+from transformers import TrainingArguments
+from peft import LoraConfig, SFTTrainer
+
+training_arguments = TrainingArguments(
+    output_dir="./results",
+    num_train_epochs=1,
+    per_device_train_batch_size=1,
+    gradient_accumulation_steps=32,
+    evaluation_strategy="steps",
+    eval_steps=2000,
+    logging_steps=15,
+    optim="paged_adamw_8bit",
+    learning_rate=2e-4,
+    lr_scheduler_type="cosine",
+    save_steps=2000,
+    warmup_ratio=0.05,
+    weight_decay=0.01,
+    max_steps=-1
+)
+
+peft_config = LoraConfig(
+    r=32,
+    lora_alpha=64,
+    lora_dropout=0.05,
+    bias="none",
+    task_type="CAUSAL_LM",
+    target_modules=["Wqkv", "fc1", "fc2"]
+)
+\end{lstlisting}
+
+\subsection{Training Execution}
+\begin{lstlisting}[language=Python]
+trainer = SFTTrainer(
+    model=model,
+    train_dataset=training_dataset,
+    peft_config=peft_config,
+    dataset_text_field="Text",
+    max_seq_length=690,
+    tokenizer=tokenizer,
+    args=training_arguments,
+)
+\end{lstlisting}
+
+\section{Conclusion}
+The presented algorithm demonstrates an efficient method for fine-tuning a language model with custom configurations, leveraging advanced techniques for optimization. This approach is particularly useful for reducing the computational load during the training process.
+
+\end{document}
