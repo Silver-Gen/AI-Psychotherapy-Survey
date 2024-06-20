@@ -1,0 +1,47 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+
+\begin{algorithm}
+\caption{Fine-Tuning Microsoft Phi-2 Model with Custom Configuration}
+\begin{algorithmic}
+
+\begin{lstlisting}[language=Python]
+
+training_arguments = TrainingArguments(
+    output_dir="./results",
+    num_train_epochs=1,
+    per_device_train_batch_size=1,
+    gradient_accumulation_steps=32,
+    evaluation_strategy="steps",
+    eval_steps=2000,
+    logging_steps=15,
+    optim="paged_adamw_8bit",
+    learning_rate=2e-4,
+    lr_scheduler_type="cosine",
+    save_steps=2000,
+    warmup_ratio=0.05,
+    weight_decay=0.01,
+    max_steps=-1
+)
+
+peft_config = LoraConfig(
+    r=32,
+    lora_alpha=64,
+    lora_dropout=0.05,
+    bias="none",
+    task_type="CAUSAL_LM",
+    target_modules=["Wqkv", "fc1", "fc2"]
+)
+\end{lstlisting}
+
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}
