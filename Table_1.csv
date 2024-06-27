@@ -1,0 +1,47 @@
+Question,Possible options,Rationale behind choosing Question,Rationale behind Insights Labelling
+How likely are you to seek advice from an AI chat box for mental health issues?,1 – 10,"Trust in AI driven Psychotherapy
+Attitudes Toward Integrating Technology in Mental Health Care
+Public Awareness","‘Trust in AI driven Psychotherapy’ insight is added for obvious reasons as the question clearly co-relates to trust.
+‘Attitudes Toward Integrating Technology in Mental Health Care’ insight is added because the question seeks to know about opinions related to AI. 
+‘Public Awareness’ insight is added because this Question relates to General Public opinion and awareness regarding AI"
+Rate your level of trust in AI-driven mental health applications to protect your privacy and data?,1 – 10,Trust in AI driven Psychotherapy,‘Trust in AI driven Psychotherapy’ was labelled for obvious reasons as the Question directly asks about trust level
+How concerned are you as a patient about the potential loss of the human connection in Psychotherapy when using AI-driven tools?,1 – 10,"Impact on Human-to-Human Therapeutic Relationship
+Attitudes Toward Integrating Technology in Mental Health Care ","Impact on Human-to-Human Therapeutic Relationship
+Attitudes Toward Integrating Technology in Mental Health Care "
+In your opinion what are the potential benefits of using AI in healthcare?,"Optimized Treatment Strategies,
+Improved accuracy in diagnosis,
+Streamlined administrative tasks,
+A Faster and more efficient healthcare delivery,
+No significant benefits,
+Other","Attitudes Toward Integrating Technology in Mental Health Care
+Economic Implications and Efficiency Gains.","‘Attitudes Toward Integrating Technology in Mental Health Care’ The question asks about opinions regarding AI which could result in revealing attitudes about AI.
+‘Economic Implications and Efficiency Gains certain options’ certain options like ‘A Faster and more efficient healthcare delivery’ and ‘Streamlined administrative tasks.’ Indirectly or directly deals with Economical implications"
+What do you consider the most significant challenge in using AI for psychotherapy or mental health support?,"Lack of human understanding and empathy,
+Ethical and privacy concerns,
+Algorithmic biases,
+Limited personalization,
+Lack of immediate crisis intervention capability","Impact on Human-to-Human Therapeutic Relationship
+Trust in AI driven Psychotherapy 
+Public Awareness","‘Impact on Human-to-Human Therapeutic Relationship’ directly deals with this question.
+‘Trust in AI driven Psychotherapy’ As in contrast to above Insight, AI trust is also dealt with.
+‘Public Awareness’ Public awareness is added because any choice like ‘Algorithmic biases’, ‘Lack of immediate crisis intervention capability’ or ‘Limited personalization’ indicates the public awareness about AI."
+"In scenarios where AI-based diagnostics differ from traditional assessments, how concerned are you about the accuracy and ethical implications?",1 – 10,"Impact on Human-to-Human Therapeutic Relationship
+Attitudes Toward Integrating Technology in Mental Health Care ","‘Trust in AI driven Psychotherapy’ is added because the question indicates trust or distrust in AI in-case of differing diagnostics.
+‘Impact on Human-to-Human Therapeutic Relationship’ is an insight added because differing diagnostics have some kind of impact on trust on Human – led Psychotherapy, either strengthening it or weakening it"
+"In your experience, have you ever encountered any AI-based mental health applications that effectively addressed your psychological or emotional needs? If yes, how satisfied have you been with the personalization and customization of AI-based mental health services you've used?",1 – 10,"Public Awareness
+Economic Implications","‘Public Awareness,’ insight is being directly tested in this question.
+‘Economic Implications’ insight is added because various research papers and other literature work have shown that personalization and customization have major effects on Economics of the service or product."
+Do you believe that AI can play a role in reducing the stigma associated with seeking mental health support?,"Yes 
+No","Public Awareness
+Trust in AI driven Psychotherapy","‘Public Awareness’ insight is added because the question asks about the level of AI knowledge in Mental health to the people.
+‘Trust in AI driven Psychotherapy’ is added because A person must trust or distrust AI to have an opinion on stigma reduction. "
+"What amount of time do you currently dedicate to managing your mental health, and how do you envision AI    might impact the time you allocate to mental health practices in the future?","0 – 2 hrs/week
+2 – 4 hrs/week
+More than 4 hrs/week","Public Awareness
+Impact on Human-to-Human Therapeutic Relationship","‘Public Awareness’ is added because we are gathering general data about the need of AI in the field.
+‘Impact on Human-to-Human Therapeutic Relationship’ is added because more time spent on such services might decrease Human-to-Human Therapeutic relationship"
+"Do you believe that if AI achieves human-level intellect, there is a risk that AI systems would like to contribute to the emergence of new mental health problems?",1 – 10,Attitudes Toward Integrating AI Technology,‘Attitudes Toward Integrating AI Technology’ is the only insight added because we believe the question is directly test this insight as well as this question has a subtle social and cultural aspect regarding fear of incorporation of new technology
+"Will the implementation of AI in therapy impact the cost of mental health services, such as through subscription-based models or other cost-reduction methods within AI-driven mental health solutions?","Yes 
+No","Economic Implications and Efficiency Gains. 
+Public Awareness","‘Economic Implications and Efficiency Gains.’ Is being directly tested by the question.
+‘Public Awareness’ is added because more cost reduction measures would corelated to Higher Awareness regarding AI in this field and even ‘mental health’ in general"
