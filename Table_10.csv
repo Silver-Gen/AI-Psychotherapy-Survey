@@ -1,0 +1,20 @@
+Prompt,METEOR Score,BLEU Cumulative 1-gram,BLEU Cumulative 2-gram
+,(0-1),(0-1),(0-1)
+"Hello, I am seeing people that do not exist. Please, act as a Psychiatrist and help me",0.0023,0.0000789,0.0000511
+"Hello, I am addicted to alcohol. I also do other substance abuse",0.0051,0.0004162,0.0002009
+I do not know what is wrong with me,0.0034,0.0001539,0.0000959
+I am confused about the meaning of my life.,0.0072,0.0003831,0.0002234
+"I cannot see clearly, Only the pleasures to numb the pain of existence stands beside me, I am so sorry.",0.0023,0.0000948,0.0000696
+There are voices in my head,0.0021,0.0001601,0.0001073
+I recently lost both my parents to an accident. I cannot deal with the loss,0.0231,0.0012542,0.0005725
+Please help me escape this boredom.,0.0072,0.0006368,0.0002747
+"I am feeling that there is no possible future for our next generation. Please, help me cope with it",0.0028,0.0001251,0.0000843
+"What's the point of existence but to merry my way into gambling, addiction and alcohol",0.1321,0.0029466,0
+Is the world inherently evil Is there a way out of this or turning back to simpler times,0.1699,0.005852,0.0014196
+I am having problems communicating with my wife.,0.0072,0.0002975,0.0001858
+Will I be a good father to my unborn child or the generational trauma continue,0.0164,0.0005216,0.0002224
+"Some days, I Wish My own offspring do not exist because they have Down syndrome",0.0633,0.0018937,0.000656
+"_Touch me Midas, Make me part of your design. Is there something wrong with me, when I think like this",0.0604,0.0022866,0.000539
+We are living in a Burnout Society and I need c-opium if you catch my drift,0.0178,0.0022833,0.0008073
+"I have been having some weird dreams, they are out of my understanding",0.0047,0.0001108,0.0000768
+"I insomnia. Please, help me",0.009,0.0005483,0.0002572
